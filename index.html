@@ -5,13 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bulb Toggler</title>
     <style>
+        .main-body{
+            background-color: #e6f2ff;
+        }
         .app-heading{
             text-align: center;
+            color:#ff0000;
         }
         .img-bulb{
             height:150px;
             display: block;
-            margin:10px auto;
+            margin:20px auto;
         }
         .bulb-container{
             display: flex;
@@ -20,37 +24,39 @@
         .btn{
              margin: 10px 40px;
              cursor: pointer;
-             width:100px;
+             width:150px;
              padding:10px 20px;
              border: none;
              border:1.5px solid black;
              border-radius: 20px;
              font-size: 20px;
+             background-color: #ccccff;
+             color:#0000e6;
 
         }
     </style>
 </head>
-<body>
+<body class="main-body">
    <h1 class="app-heading">Bulb Toggler</h1> 
    <img src="./images/bulb-off.png" class="img-bulb" id="img-bulb"/>
-   <div class="bulb-container">
-    <button class="btn" onclick="bulbOn()">
-        ON
-    </button>
-    <button class="btn" onclick="bulbOff()">
-        OFF
-    </button>
-   </div>
+   <div class="app-heading">
+      <button class="btn" onclick="toggleBulb()">
+    TOGGLE
+</button>
+</div>
+   
    <script>
-    function bulbOn(){
+    function toggleBulb(){
         const bulbElement = document.getElementById("img-bulb");
+       if( bulbElement.src.includes("./images/bulb-off.png"))
+       {
+        bulbElement.src="./images/bulb-off.png";
+       }
+       else{
         bulbElement.src="./images/bulb-on.png";
+       }
     }
 
-    function bulbOff(){
-        const bulbElement = document.getElementById("img-bulb");
-        bulbElement.src="./images/bulb-off.png";
-    }
    </script>
 </body>
 </html>
