@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulb Toggler</title>
+    <style>
+        .app-heading{
+            text-align: center;
+        }
+        .img-bulb{
+            height:150px;
+            display: block;
+            margin:10px auto;
+        }
+        .bulb-container{
+            display: flex;
+            justify-content: center;
+        }
+        .btn{
+             margin: 10px 40px;
+             cursor: pointer;
+             width:100px;
+             padding:10px 20px;
+             border: none;
+             border:1.5px solid black;
+             border-radius: 20px;
+             font-size: 20px;
+
+        }
+    </style>
+</head>
+<body>
+   <h1 class="app-heading">Bulb Toggler</h1> 
+   <img src="./images/bulb-off.png" class="img-bulb" id="img-bulb"/>
+   <div class="bulb-container">
+    <button class="btn" onclick="bulbOn()">
+        ON
+    </button>
+    <button class="btn" onclick="bulbOff()">
+        OFF
+    </button>
+   </div>
+   <script>
+    function bulbOn(){
+        const bulbElement = document.getElementById("img-bulb");
+        bulbElement.src="./images/bulb-on.png";
+    }
+
+    function bulbOff(){
+        const bulbElement = document.getElementById("img-bulb");
+        bulbElement.src="./images/bulb-off.png";
+    }
+   </script>
+</body>
+</html>
